@@ -20,3 +20,4 @@ print(ken)
 print(ryu)
 
 ryu.attacks(ken)
+ss

@@ -28,9 +28,12 @@ class Goblin(GameObject):
 
 
 class Human(GameObject):
-    class_name = "human"
-    desc = "A destructor of the earth"
-
+    def __init__(self, name):
+        self.class_name = "human"
+        self.desc = "A destructor of the earth"
+        self.health = 100
+        super().__init__(name)
+    
 
 goblin = Goblin("Gobbly")
 human = Human("Thor")
@@ -78,6 +81,5 @@ verb_dict = {
 
 while True:
     get_input()
-    print (goblin.name)
 
 

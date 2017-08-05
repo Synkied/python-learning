@@ -16,6 +16,7 @@ class Fighter():
 
 ken = Fighter("Ken")
 ryu = Fighter("Ryu")
+
 print(ken)
 print(ryu)
 

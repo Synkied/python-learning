@@ -4,7 +4,7 @@ import random, os
 print("Hello, what is your name ?")
 playerName = input()
 
-print("Well, hello "+playerName+". I'm thinking of a number between 1 and 20. Can you guess it ?")
+print("Well, hello "+playerName+". I'm thinking of a number between 1 and 20. Can you guess it in less than 6 rounds ?")
 secretNumber = random.randint(1,20)
 
 for guessesTaken in range(1,7):
@@ -23,7 +23,7 @@ if guess == secretNumber:
     else:
         print("Good job, "+playerName+"! You guessed my number in "+str(guessesTaken)+" guesses.")
 else:
-    print("Nope, the number I was thinking of, was: "+str(secretNumber))
+    print("Nope, the number I was thinking of was: "+str(secretNumber))
 
 
 os.system("pause")

@@ -307,4 +307,32 @@ If two numbers in the argument array have the same number of digits, return the 
 # print(find_longest([8, 900, 500]))
 # 
 # 
+# 
 
+
+fighters = {(0,0):"Ryu", (0,1):"E.Honda", (0,2):"Blanka", (0,3):"Guile", (0,4):"Balrog", (0,5):"Vega", (1,0):"Ken", (1,1):"Chun Li", (1,2):"Zangief", (1,3):"Dhalsim", (1,4):"Sagat", (1,5):"M.Bison"}
+initial_position = (0,0)
+
+def street_fighter_selection(fighters, initial_position, moves):
+	current_position = [0,0]
+
+	counting = dict((x,moves.count(x)) for x in set(moves))
+
+	for direction in counting:
+		print(counting)
+
+		if direction == "left":
+			current_position[1] += counting[direction]
+
+			if current_position >= [0,5]:
+				current_position = [0,0]
+				current_position[1] += counting[direction]
+			
+	return current_position
+
+
+		# if move == "up" and current_position != (0,x):
+
+
+
+print(street_fighter_selection(fighters, initial_position, ["left"]*7))

@@ -309,30 +309,54 @@ If two numbers in the argument array have the same number of digits, return the 
 # 
 # 
 
+# fighters = [
+# 	["Ryu", "E.Honda", "Blanka", "Guile", "Balrog", "Vega"],
+# 	["Ken", "Chun Li", "Zangief", "Dhalsim", "Sagat", "M.Bison"]
+# ]
+# opts = ["up","down","right","left"]
 
-fighters = {(0,0):"Ryu", (0,1):"E.Honda", (0,2):"Blanka", (0,3):"Guile", (0,4):"Balrog", (0,5):"Vega", (1,0):"Ken", (1,1):"Chun Li", (1,2):"Zangief", (1,3):"Dhalsim", (1,4):"Sagat", (1,5):"M.Bison"}
-initial_position = (0,0)
+# MOVES = {"up": (-1, 0), "down": (1, 0), "right": (0, 1), "left": (0, -1)}
 
-def street_fighter_selection(fighters, initial_position, moves):
-	current_position = [0,0]
+# def street_fighter_selection(fighters, initial_position, moves):
+#     y, x = initial_position
+#     hovered_fighters = []
+#     for move in moves:
+#         dy, dx = MOVES[move]
+#         y += dy
+#         if not 0 <= y < len(fighters):
+#             y -= dy
+#         x = (x + dx) % len(fighters[y])
+#         hovered_fighters.append(fighters[y][x])
+#     return hovered_fighters
 
-	counting = dict((x,moves.count(x)) for x in set(moves))
+# print(street_fighter_selection(fighters, (0,0), ["left"]*8))
 
-	for direction in counting:
-		print(counting)
+# alternative
+# 
+#  def street_fighter_selection(fighters, initial_position, moves):
+#     cur_pos = [initial_position[0], initial_position[1]]
+#     selected_fighters = []
 
-		if direction == "left":
-			current_position[1] += counting[direction]
+#     for move in moves:
+#         if move == "up": 
+#             cur_pos[0] = 0
+#         elif move == "down": 
+#             cur_pos[0] = 1
+#         elif move == "right":
+#             cur_pos[1] = (cur_pos[1] + 1) % 6
+#         elif move == "left":
+#             cur_pos[1] = (cur_pos[1] - 1) % 6
+#         selected_fighters.append(fighters[cur_pos[0]][cur_pos[1]])
 
-			if current_position >= [0,5]:
-				current_position = [0,0]
-				current_position[1] += counting[direction]
-			
-	return current_position
+#     return selected_fighters
+#     
 
+"""
+Unscramble the eggs.
 
-		# if move == "up" and current_position != (0,x):
-
-
-
-print(street_fighter_selection(fighters, initial_position, ["left"]*7))
+The string given to your function has had an "egg" inserted directly after each consonant. You need to return the string before it became eggcoded.
+"""
+# import re
+# def unscramble_eggs(word):
+# 	matchObj = re.sub(r'(egg)*','', word) # sub replaces a string. The usage is : re.sub(pattern, replacing_string, original_string)
+# 	return matchObj

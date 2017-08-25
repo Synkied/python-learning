@@ -4,12 +4,44 @@
 		"selected_items":
 		[
 			[
-				"agent",
-				"agent_attributes\tstatement"
+				"latitude",
+				"latitude_rad"
+			],
+			[
+				"initla",
+				"initialize_zones\tfunction"
+			],
+			[
+				"class",
+				"classmethod\tclass"
+			],
+			[
+				"Min",
+				"MIN_LONGITUDE_DEGREES"
+			],
+			[
+				"corner",
+				"conrner_lr\tparam"
+			],
+			[
+				"conrenr",
+				"conrner_lr"
+			],
+			[
+				"latit",
+				"latitude_degrees\tstatement"
+			],
+			[
+				"longitude",
+				"longitude_degrees"
 			],
 			[
 				"attr",
-				"attr_value\tstatement"
+				"attr_name"
+			],
+			[
+				"agent",
+				"agent_attributes"
 			],
 			[
 				"agen",
@@ -171,15 +203,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "model.py",
-			"settings":
-			{
-				"buffer_size": 492,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		}
 	],
 	"build_system": "Anaconda Python Builder",
 	"build_system_choices":
@@ -380,6 +403,13 @@
 	"file_history":
 	[
 		"/C/Users/PC/Desktop/python_training/python_learning/OC/oop/agents-100k.json",
+		"/C/Users/PC/Desktop/python_training/python_learning/OC/oop/model.py",
+		"/C/Users/PC/Desktop/python_training/python_learning/OC/oop/tes.py",
+		"/C/Users/PC/Desktop/python_training/python_learning/OC/oop/download_agents.py",
+		"/C/Users/PC/Desktop/python_training/python_learning/OOP/classes.py",
+		"/C/Users/PC/Desktop/python_training/python_learning/firstClassFunctions.py",
+		"/C/Users/PC/Desktop/python_training/python_learning/toKnow.py",
+		"/C/Users/PC/Desktop/test.py",
 		"/C/Users/PC/Desktop/python_training/python_learning/OC/oop/README.md",
 		"/C/Users/PC/Desktop/python_training/python_learning/OC/oop/paralleleWord.py",
 		"/C/Users/PC/Desktop/python_training/python_learning/codeWars.py",
@@ -397,15 +427,12 @@
 		"/C/Users/PC/Desktop/python_training/python_learning/OC/quotes_json.py",
 		"/C/Users/PC/Desktop/python_training/python_learning/OOP/PyOOP.py",
 		"/C/Users/PC/Desktop/python_training/python_learning/fileCreation.py",
-		"/C/Users/PC/Desktop/python_training/python_learning/firstClassFunctions.py",
-		"/C/Users/PC/Desktop/python_training/python_learning/OOP/classes.py",
 		"/C/Users/PC/Desktop/python_training/URL_checker_project/URLChecker/urlcheckerhtml.py",
 		"/C/Users/PC/Desktop/python_training/python_learning/GoblinGame.py",
 		"/C/Users/PC/Desktop/python_training/python_learning/PythonTestingFunctions.py",
 		"/C/Users/PC/Desktop/python_training/python_learning/regex.py",
 		"/C/Users/PC/Desktop/python_training/python_learning/OC/characters.json",
 		"/C/Users/PC/Desktop/python_training/python_learning/automate_the_boring_stuff/try_except.py",
-		"/C/Users/PC/Desktop/python_training/python_learning/toKnow.py",
 		"/C/Users/PC/Desktop/python_training/python_learning/turtleTuto.py",
 		"/C/Users/PC/Desktop/python_training/python_learning/OC/test.py",
 		"/C/Users/PC/Desktop/python_training/python_learning/test.py",
@@ -502,21 +529,18 @@
 		"/C/Users/PC/Desktop/CleverProgramming/turtle.py",
 		"/C/Users/PC/Dropbox/Quenmille/OpenClassrooms parcours/Python/PythonTestingFunctions.py",
 		"/C/Users/PC/Desktop/Projets en cours/Atelier de Roxane/functions.php",
-		"/C/Users/PC/Desktop/Projets en cours/Atelier de Roxane/homepage_sliding_vids/css/ytEmbed.css",
-		"/C/Users/PC/Desktop/Projets en cours/Atelier de Roxane/homepage_sliding_vids/js/ytEmbed.js",
-		"/C/Users/PC/Desktop/Projets en cours/Atelier de Roxane/homepage_sliding_vids/js/ytLoad.js",
-		"/C/Users/PC/Desktop/Projets en cours/Atelier de Roxane/homepage_sliding_vids/index.html",
-		"/C/Users/PC/Desktop/Projets en cours/Atelier de Roxane/homepage_sliding_vids/css/lightslider.css"
+		"/C/Users/PC/Desktop/Projets en cours/Atelier de Roxane/homepage_sliding_vids/css/ytEmbed.css"
 	],
 	"find":
 	{
-		"height": 50.0
+		"height": 38.0
 	},
 	"find_in_files":
 	{
 		"height": 104.0,
 		"where_history":
 		[
+			"<current file>",
 			""
 		]
 	},
@@ -525,6 +549,28 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"latitude",
+			"    ",
+			"longitude_rad",
+			"latitude_rad",
+			"longitude_rad",
+			"latitude_rad",
+			"corner2",
+			"upr_corner",
+			"corner1",
+			"        ",
+			"corner_upr",
+			"corner_lowl",
+			"conrner_upr",
+			"self",
+			"LONGITUDE",
+			"180",
+			"ur",
+			"ll",
+			"lr",
+			"ul",
+			"LONGITUDE",
+			"latitude",
 			"test",
 			"agreeability",
 			"prenom",
@@ -630,29 +676,7 @@
 			"4",
 			"”",
 			"’",
-			"‘",
-			"words",
-			")))\n",
-			"165",
-			"165px",
-			">\n",
-			"responsive",
-			"id",
-			"lightSlider",
-			"lightslider",
-			"lightSlider",
-			"$",
-			"undefined",
-			"responsive",
-			"}\n",
-			"lightSlider",
-			"custom-script",
-			"custom",
-			"3",
-			"suivant",
-			"premier",
-			"0",
-			"a"
+			"‘"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -660,6 +684,9 @@
 		"regex": false,
 		"replace_history":
 		[
+			"\t",
+			"    ",
+			"\t\t",
 			"'"
 		],
 		"reverse": false,
@@ -671,138 +698,8 @@
 	"groups":
 	[
 		{
-			"selected": 0,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "model.py",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 492,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								329,
-								329
-							]
-						],
-						"settings":
-						{
-							"auto_complete_triggers":
-							[
-								{
-									"characters": ".",
-									"selector": "source.python - string - comment - constant.numeric"
-								},
-								{
-									"characters": ".",
-									"selector": "source.python - string - constant.numeric"
-								}
-							],
-							"bracket_highlighter.busy": false,
-							"bracket_highlighter.locations":
-							{
-								"close":
-								{
-									"1":
-									[
-										329,
-										330
-									]
-								},
-								"icon":
-								{
-									"1":
-									[
-										"Packages/BracketHighlighter/icons/round_bracket.png",
-										"brackethighlighter.default"
-									]
-								},
-								"open":
-								{
-									"1":
-									[
-										325,
-										326
-									]
-								},
-								"unmatched":
-								{
-								}
-							},
-							"bracket_highlighter.regions":
-							[
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content"
-							],
-							"git_gutter_is_enabled": true,
-							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				}
 			]
 		}
 	],

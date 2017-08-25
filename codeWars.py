@@ -360,3 +360,52 @@ The string given to your function has had an "egg" inserted directly after each 
 # def unscramble_eggs(word):
 # 	matchObj = re.sub(r'(egg)*','', word) # sub replaces a string. The usage is : re.sub(pattern, replacing_string, original_string)
 # 	return matchObj
+
+
+"""
+Return the number (count) of vowels in the given string.
+
+We will consider a, e, i, o, and u as vowels for this Kata.
+"""
+
+# def getCount(inputStr):
+# 	num_vowels = 0
+# 	vowels = ["A","I","U","E","O"]
+
+# 	for char in inputStr.upper():
+# 		if char in vowels:
+# 			num_vowels+=1
+# 	return num_vowels
+
+# print(getCount("abracadabra"))
+
+# # alternative
+
+# def getCount(inputStr):
+#     return sum(1 for let in inputStr if let in "aeiouAEIOU")
+#     
+
+# def mean(lst):
+# 	a = []
+# 	chars = ""
+# 	nums = []
+# 	for item in lst:
+# 		if item.isalpha(): # check if item is in the alphabet
+# 			chars+=item
+# 		elif item.isdigit(): # check if item is a digit
+# 			item = int(item) # convert item to integer
+# 			nums.append(item) # append all items to nums
+# 			mean_cal = sum(nums)/len(nums) # get the sum of all items in nums and divide by the number of items in nums (calulating the mean)
+
+# 	a.append(mean_cal) # append mean_cal to a
+# 	a.append(chars) # append chars to a
+# 	return a
+
+
+# lst = ["u", "6", "d", "1", "i", "w", "6", "s", "t", "4", "a", "6", "g", "1", "2", "w", "8", "o", "2", "0"]
+# print(mean(lst))
+
+
+# #alternative
+# def mean(lst):
+#     return [sum(int(n) for n in lst if n.isdigit()) / 10.0, "".join(c for c in lst if c.isalpha())]

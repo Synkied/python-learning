@@ -1,3 +1,6 @@
+# coding: cp1252
+
+
 # def afficher_flottant(nb):
 # 	if type(nb) is not float:
 # 		raise TypeError("Please input a float")
@@ -67,6 +70,64 @@
 # for cle in fruits.keys():
 #      print(cle)
 
-my_string="Hello world!"
+# my_string="Hello world!"
 
-print(my_string.split())
+# print(my_string.split())
+
+# class TableauNoir:
+
+# 	def __init__(self):
+
+# 		self.surface = ''
+
+# 	def write(self, msg):
+
+# 		if self.surface != "":
+# 			self.surface += '\n'
+# 		self.surface += msg
+
+# 	def read(self):
+# 		print(self.surface)
+
+# 	def delete(self, index):
+
+# 		self.surface = self.surface.split('\n')
+# 		del self.surface[index]
+
+# 		self.surface = '\n'.join(self.surface)
+
+
+# tab = TableauNoir()
+
+# tab.write("Dude, this is awesome")
+# tab.write("Yeah, I know right?")
+# tab.write("Please delete my message above")
+
+# tab.read()
+
+# tab.delete(1)
+# print('\n')
+
+# TableauNoir.write(tab, "I did :)")
+# TableauNoir.read(tab)
+
+
+
+# class Compteur:
+
+# 	objet_cree = 0
+# 	def __init__(self):
+
+# 		Compteur.objet_cree+=1
+
+
+# 	@classmethod
+# 	def combien(cls):
+# 		print("{} objects created.".format(cls.objet_cree))
+
+
+# a = Compteur()
+# b = Compteur()
+
+
+# Compteur.combien()

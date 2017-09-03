@@ -409,3 +409,39 @@ We will consider a, e, i, o, and u as vowels for this Kata.
 # #alternative
 # def mean(lst):
 #     return [sum(int(n) for n in lst if n.isdigit()) / 10.0, "".join(c for c in lst if c.isalpha())]
+
+
+# def black_or_white_key(key_press_count):
+#     return "black" if (key_press_count - 1) % 88 % 12 in [1, 4, 6, 9, 11] else "white"
+
+
+# w, b = "white", "black"
+# keyboard = [w, b, w, w, b, w, b, w, w, b, w, b]
+
+# def black_or_white_key(count):
+#     return keyboard[(count - 1) % 88 % 12]
+#     
+
+# Count characters in your string
+
+# def count(string):
+# 	letters_count = {}
+# 	for char in string:
+# 		letters_count[char] = 0
+# 	for char in string:
+# 		if string.count(char) >= 1:
+# 			letters_count[char] += 1
+# 		else:
+# 			letters_count = {}
+	
+# 	return letters_count
+
+# print(count('abaaaa'))
+
+
+
+# Regexp Basics - is it IPv4 address?
+
+
+def ipv4_address(address):
+    #your code here

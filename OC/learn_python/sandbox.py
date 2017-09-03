@@ -131,3 +131,87 @@
 
 
 # Compteur.combien()
+
+
+
+# t = 100
+# num = [n for n in range(t) if n%3 == 0 or n%5 == 0]
+# print(sum(num))
+# 
+
+
+
+# word = "ni"
+
+# file = open('my_txt.txt')
+# lines = ''.join([line for line in file if word in line if not line.endswith('.')])
+
+# print(lines)
+
+# from random import randrange
+
+# class CoinToss:
+
+# 	def toss_a_coin(self):
+
+# 		randToss = randrange(2)
+# 		if randToss == 0:
+# 			return "Heads"
+# 		else:
+# 			return "Tails"
+
+
+# toss = CoinToss()
+
+# print(toss.toss_a_coin())
+
+# from random import randrange
+
+
+# class GuessTheNumber:
+
+# 	def play(self):
+# 		randNum = randrange(101)
+		
+# 		while True:
+# 			playerInput = int(input())	
+# 			if playerInput > randNum:
+# 				print("Your number is too big")
+# 			elif playerInput < randNum:
+# 				print("Your number is too small")
+# 			else:
+# 				print("GG!")
+# 				break
+
+# guessing = GuessTheNumber()
+
+# guessing.play()
+
+# reversed range
+# for x in range(10,0,-1):
+# 	print("X =", x)
+
+# for x in reversed(range(10)):
+# 	print("X =", x)
+
+# for x in range(10):
+# 	for y in range(10):
+# 		print(x,y)
+
+
+# Creating a MadLib game, with unpacking examples.
+class MadLib:
+
+
+	def getDataFromUser(self):
+		noun1, adjective1, adverb1 = input(), input(), input()
+		return noun1, adjective1, adverb1
+
+	def tellStory(self, noun1, adjective1, adverb1):
+		story = "This is a funny story about ", noun1, " who wandered in ", adjective1,". He was a beautiful ", adverb1
+		print("".join(story))
+
+myStory = MadLib()
+
+userData = myStory.getDataFromUser()
+myStory.tellStory(*userData) # unpacking multiple values from getDataFromuser(), using the *args.

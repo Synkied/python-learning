@@ -200,18 +200,114 @@
 
 
 # Creating a MadLib game, with unpacking examples.
-class MadLib:
+# class MadLib:
 
 
-	def getDataFromUser(self):
-		noun1, adjective1, adverb1 = input(), input(), input()
-		return noun1, adjective1, adverb1
+# 	def getDataFromUser(self):
+# 		noun1, adjective1, adverb1 = input(), input(), input()
+# 		return noun1, adjective1, adverb1
 
-	def tellStory(self, noun1, adjective1, adverb1):
-		story = "This is a funny story about ", noun1, " who wandered in ", adjective1,". He was a beautiful ", adverb1
-		print("".join(story))
+# 	def tellStory(self, noun1, adjective1, adverb1):
+# 		story = "This is a funny story about ", noun1, " who wandered in ", adjective1,". He was a beautiful ", adverb1
+# 		print("".join(story))
 
-myStory = MadLib()
+# myStory = MadLib()
 
-userData = myStory.getDataFromUser()
-myStory.tellStory(*userData) # unpacking multiple values from getDataFromuser(), using the *args.
+# userData = myStory.getDataFromUser()
+# myStory.tellStory(*userData) # unpacking multiple values from getDataFromuser(), using the *args.
+# 
+# 
+
+
+# l = input()
+# s2 = l[-1] + l[:-1]
+# print(l)
+# while s2 != l:
+#     print(s2)
+#     s2 = s2[-1] + s2[:-1]
+# print(s2)
+
+
+# i=0
+# p=""
+# while True:
+#     if p!=source:
+#         print(source)
+#     p=source
+#     source=target[:i]+source[i:]
+#     i+=1
+#     if source==target:
+#         break
+# print(target)
+
+
+# n = int(input())
+# ok=[]
+# for i in range(n):
+#     a, b = [int(j) for j in input().split()]
+#     i=1
+#     while (b*i)%a!=1 and i<2761300 :
+#         i+=1
+#     if i==2761300:
+#         ok.append( 'NaN')
+#     else:
+#         ok.append(str(i))
+# print (" ".join(ok))
+
+
+# n=int(input())
+# p=int(input())
+# a=0
+# while n>1:a+=n//p;n=n//p
+# print(a)
+
+# """
+# Write the shortest function to convert an IP address into it's integer representation and output it as an integer.
+
+# To change an IPv4 address to it's integer representation, the following calculation is required:
+
+#     Break the IP address into it's four octets.
+#     (Octet1 * 16777216) + (Octet2 * 65536) + (Octet3 * 256) + (Octet4)
+# """
+# ipv_4 = input()
+
+# print(sum((int(j)*4**(4*i)) for i,j in enumerate(ipv_4.split('.')[::-1])))
+
+
+# """
+# Printing shadocks numbers
+# """
+
+# n=int(input())
+# numShadocks={0:"GA",1:"BU",2:"ZO",3:"MEU"}
+# x=""
+# while n>3:
+#  x=numShadocks[n%4]+x;n//=4
+# print(numShadocks[n]+x)
+
+"""
+output a category from an input : intervalx, intervaly, category
+"""
+
+# i=input
+# x=int(i())
+# i()
+# while 1:
+#  f,t,c=i().split()
+#  if int(f)<=x<=int(t):print(c)
+
+
+"""
+Print a hollow square of n length
+"""
+
+def printStars(length):
+	if length > 1:
+		l = ['*'*length]
+		l+= ['*' + ' '*(length-2) + '*'] * (length-2)
+		l+= ['*'*length]
+		return l
+	else:
+		return "*"
+
+print('\n'.join(printStars(5)))

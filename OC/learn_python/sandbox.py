@@ -301,13 +301,97 @@ output a category from an input : intervalx, intervaly, category
 Print a hollow square of n length
 """
 
-def printStars(length):
-	if length > 1:
-		l = ['*'*length]
-		l+= ['*' + ' '*(length-2) + '*'] * (length-2)
-		l+= ['*'*length]
-		return l
-	else:
-		return "*"
+# def printStars(length):
+# 	if length > 1:
+# 		l = ['*'*length]
+# 		l+= ['*' + ' '*(length-2) + '*'] * (length-2)
+# 		l+= ['*'*length]
+# 		return l
+# 	else:
+# 		return "*"
 
-print('\n'.join(printStars(5)))
+# print('\n'.join(printStars(5)))
+
+
+# k = {1:2,3:4}
+
+# for p,d in k.items():
+# 	print(p)
+
+# bash code
+# 
+# tr OLZEASGTBQolzeasgtbq 01234567890123456789
+
+
+# import sys
+# import math
+
+# # Auto-generated code below aims at helping you parse
+# # the standard input according to the problem statement.
+
+# w, h = [int(i) for i in input().split()]
+# x_1, y_1 = [int(i) for i in input().split()]
+# x_2, y_2 = [int(i) for i in input().split()]
+# tab=[]
+# if y_1<0:
+#     y_1=0
+# if x_1<0:
+#     x_1=0
+# if x_1>x_2:
+#     x_1,x_2=x_2,x_1
+# if y_1>y_2:
+#     y_1,y_2=y_2,y_1
+# for i in range(h):
+#     top=[]
+#     for j in range(w):
+#         if i in range(y_1,y_2+1) and j in range(x_1,x_2+1):
+#             top.append('+')
+#         else:
+#             top.append('.')
+#     tab.append(''.join(top))
+# for i in tab:
+#     print i
+
+
+# l = int(input())
+# m = int(input())
+# n = int(input())
+
+# # Write an action using print
+# # To debug: print >> sys.stderr, "Debug messages..."
+# for i in range(n):
+#     print (l + (m*i))
+# print
+# for i in range(n):
+#     print (l/(m**i))
+# print
+# 
+# 
+# 
+
+# input_count = int(input())
+# for i in range(input_count):
+#     a,b = input().split('/')
+#     b = int(b)
+#     print(2**(32-b)-2)
+
+
+# def factorial(n):
+
+# 	if n <= 1:
+# 		return 1
+# 	else:
+# 		return n*factorial(n-1)
+
+# print(factorial(10))
+
+
+# def exponentiation(n,p):
+# 	if p <=0: 
+# 		return 1
+# 	else:
+# 		return n * exponentiation(n,p-1)
+
+# print(exponentiation(5,4))
+
+

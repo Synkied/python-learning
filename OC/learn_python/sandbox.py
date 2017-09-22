@@ -461,86 +461,123 @@ class LinkedList(object):
 # print(matrix)
 
 
-l = [1,2,2,3]
+# l = [1,2,2,3]
 
-def factorial(n):
-	"""Calculates the number of permutations of n items (n: integer >= 0)"""
-	y = 1 # if x < 2, return 1
-	for i in range(2,n+1): # if x >= 2...
-		y*=i # calculate factorial of x. eg (x = 3 -> i in range(2,4) -> y = 1*2 -> y = 2. y = 2*3 -> y = 6. factorial of 3 is 6.)
-	return y
+# def factorial(n):
+# 	"""Calculates the number of permutations of n items (n: integer >= 0)"""
+# 	y = 1 # if x < 2, return 1
+# 	for i in range(2,n+1): # if x >= 2...
+# 		y*=i # calculate factorial of x. eg (x = 3 -> i in range(2,4) -> y = 1*2 -> y = 2. y = 2*3 -> y = 6. factorial of 3 is 6.)
+# 	return y
 
-# print(factorial(0))
+# # print(factorial(0))
 
-def count_repetitions(a_list):
-	repeted = []
-	uniq = []
-	for item in a_list:
-		if item not in uniq: # if item is not in the uniq list, then we count the number of times it is in the origin list a_list. This assures we don't count n times the item is present //
-		# eg. [1,1,1] would return 3 3 3 if we didn't count only items appended to uniq
-			uniq.append(item) # append the item to the uniq list
-			counting = a_list.count(item) # and count the number of times the item is present in the origin list l
-			if counting > 1: # if item is repeted more than once
-				repeted.append(counting) # append counting to the repeted list, to get the number of times each item is repeted
-	return repeted
-
-
-def permutation(x,y):
-	if type(y) == list: # y can be a list of number of times of repeted items.
-	# if y is such a list, we can determine how many unique permutations there are, ignoring y repeted nums
-	# the calculation goes : factorial(x)//fact(y[0])*fact(y[1])....*fact(y[n]))
-
-		m = factorial(x)
-		for j in y:
-			n = 1
-			for i in range(2,j+1):
-				m//=n*i #  (eg. factorial(8)//(factorial(2)*factorial(3)) = 3360)
-		return m
-
-	if x == 1:
-		return 1
-	else:
-		z = factorial(x)//factorial(x-y)
-		return z
-
-def combination(x,y):
-	if x == 1:
-		return 1
-	else:
-		z = factorial(x)//(factorial(x-y)*factorial(y))
-		return z
+# def count_repetitions(a_list):
+# 	repeted = []
+# 	uniq = []
+# 	for item in a_list:
+# 		if item not in uniq: # if item is not in the uniq list, then we count the number of times it is in the origin list a_list. This assures we don't count n times the item is present //
+# 		# eg. [1,1,1] would return 3 3 3 if we didn't count only items appended to uniq
+# 			uniq.append(item) # append the item to the uniq list
+# 			counting = a_list.count(item) # and count the number of times the item is present in the origin list l
+# 			if counting > 1: # if item is repeted more than once
+# 				repeted.append(counting) # append counting to the repeted list, to get the number of times each item is repeted
+# 	return repeted
 
 
-def permutlist(seq, er=False):
-	"""
-	Returns lists of permutations in seq
-	if er = True, eliminates repeted elements
-	"""
-	p = [seq] # p = matrix of seq
-	n = len(seq)
+# def permutation(x,y):
+# 	if type(y) == list: # y can be a list of number of times of repeted items.
+# 	# if y is such a list, we can determine how many unique permutations there are, ignoring y repeted nums
+# 	# the calculation goes : factorial(x)//fact(y[0])*fact(y[1])....*fact(y[n]))
 
-	for k in range(0,n-1):
-		for i in range(0,len(p)):
-			z = p[i][:] # p[i][:] is equivalent to list(p[i]). Creates a copy of p[i] in z
-			for c in range(0,n-k-1):
-				z.append(z.pop(k))
+# 		m = factorial(x)
+# 		for j in y:
+# 			n = 1
+# 			for i in range(2,j+1):
+# 				m//=n*i #  (eg. factorial(8)//(factorial(2)*factorial(3)) = 3360)
+# 		return m
 
-				if er==False or z not in p:
-					p.append(z[:]) # copies the z list inside p, to get all permutations (with repeted elements in seq)
-	print("Number of permutations:",len(p))
-	return sorted(p)
+# 	if x == 1:
+# 		return 1
+# 	else:
+# 		z = factorial(x)//factorial(x-y)
+# 		return z
 
-# print(permutation(3,3))
-print(permutation(len(l),count_repetitions(l))) # permutations of UNIQUE items in a list, via count_repetitions
-# print(combination(n,k))
+# def combination(x,y):
+# 	if x == 1:
+# 		return 1
+# 	else:
+# 		z = factorial(x)//(factorial(x-y)*factorial(y))
+# 		return z
 
-# print(permutlist(l))
+
+# def permutlist(seq, er=False):
+# 	"""
+# 	Returns lists of permutations in seq
+# 	if er = True, eliminates repeted elements
+# 	"""
+# 	p = [seq] # p = matrix of seq
+# 	n = len(seq)
+
+# 	for k in range(0,n-1):
+# 		for i in range(0,len(p)):
+# 			z = p[i][:] # p[i][:] is equivalent to list(p[i]). Creates a copy of p[i] in z
+# 			for c in range(0,n-k-1):
+# 				z.append(z.pop(k))
+
+# 				if er==False or z not in p:
+# 					p.append(z[:]) # copies the z list inside p, to get all permutations (with repeted elements in seq)
+# 	print("Number of permutations:",len(p))
+# 	return sorted(p)
+
+# # print(permutation(3,3))
+# print(permutation(len(l),count_repetitions(l))) # permutations of UNIQUE items in a list, via count_repetitions
+# # print(combination(n,k))
+
+# # print(permutlist(l))
 
 
 
-"""Understanding list copy"""
-m = [[1,2,3],[3,2,1]]
+# """Understanding list copy"""
+# m = [[1,2,3],[3,2,1]]
 
-p = m[0][:]
+# p = m[0][:]
 
-print(p)
+# print(p
+
+
+# """
+# After they became famous, the CodeBots all decided to move to a new building and live together. 
+# The building is represented by a rectangular matrix of rooms. Each cell in the matrix contains an integer that represents the price of the room. 
+# Some rooms are free (their cost is 0), but that's probably because they are haunted, so all the bots are afraid of them. 
+# That is why any room that is free or is located anywhere below a free room in the same column is not considered suitable for the bots to live in.
+
+# Help the bots calculate the total price of all the rooms that are suitable for them.
+# """
+
+# def matrixElementsSum(matrix):
+# 	for seq in range(len(matrix)-1):
+# 		for elm in range(len(matrix[seq])):
+# 			if matrix[seq][elm] == 0:
+# 				matrix[seq+1][elm] =0
+	
+# 	return sum([sum(row) for row in matrix])
+
+
+# # alternative
+# 	# t = 0
+# 	# for c in zip(*matrix):
+# 	# 	for r in c:
+# 	# 		if r == 0:
+# 	# 			break
+# 	# 		t += r
+# 	# return t
+
+    
+
+# matrix = [[0, 1, 1, 2], 
+# 		[0, 5, 0, 0], 
+# 		[2, 0, 3, 3]]
+
+# print(matrixElementsSum(matrix))
+

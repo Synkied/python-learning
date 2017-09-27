@@ -1,5 +1,6 @@
 # coding: cp1252
 
+from random import randint
 
 # def afficher_flottant(nb):
 # 	if type(nb) is not float:
@@ -395,26 +396,7 @@ Print a hollow square of n length
 # print(exponentiation(5,4))
 
 
-"""
-Creating a linked list
-"""
 
-class Node(object):
-
-	def __init__(self, data, n = None):
-		self.data = data
-		self.next_node = n
-
-class LinkedList(object):
-	
-	def __init__(self, head = None):
-		self.head = head
-		self.size = 0
-
-	def add(self, data):
-		new_node = Node(data, self.head)
-		
-		
 
 # def checkPalindrome(inputString):
 #     inputSRev = "".join([i for i in inputString][::-1])
@@ -446,7 +428,7 @@ class LinkedList(object):
 #     return last
 
             
-# print(almostIncreasingSequence([1,2,3,1
+# print(almostIncreasingSequence([1,2,3,1])
 
 
 # matrix = [[0, 1, 1, 2], 
@@ -530,7 +512,7 @@ class LinkedList(object):
 # 	print("Number of permutations:",len(p))
 # 	return sorted(p)
 
-# # print(permutation(3,3))
+# print(permutation(3,3))
 # print(permutation(len(l),count_repetitions(l))) # permutations of UNIQUE items in a list, via count_repetitions
 # # print(combination(n,k))
 
@@ -543,7 +525,7 @@ class LinkedList(object):
 
 # p = m[0][:]
 
-# print(p
+# print(p)
 
 
 # """
@@ -559,7 +541,7 @@ class LinkedList(object):
 # 	for seq in range(len(matrix)-1):
 # 		for elm in range(len(matrix[seq])):
 # 			if matrix[seq][elm] == 0:
-# 				matrix[seq+1][elm] =0
+# 				matrix[seq+1][elm] = 0
 	
 # 	return sum([sum(row) for row in matrix])
 
@@ -580,4 +562,201 @@ class LinkedList(object):
 # 		[2, 0, 3, 3]]
 
 # print(matrixElementsSum(matrix))
+
+# def allLongestStrings(inputArray):
+# 	arr = []
+# 	for i in (inputArray):
+# 		if len(i) == len(max(inputArray)):
+# 			arr.append(i)
+# 	return arr			
+
+# def allLongestStrings(inputArray):
+# 	return [i for i in inputArray if len(i) == len(max(inputArray, key=len))]	
+    
+
+# print(allLongestStrings(["aa","bb","aaaa","cc","bbbb"]))
+
+# def commonCharacterCount(s1, s2):
+# 	a = []
+# 	b = []
+# 	count = 0
+
+# 	for char1 in s1:
+# 		a.append(char1)
+# 	for char2 in s2:
+# 		b.append(char2)
+
+# 	for i in range(len(a)):
+# 		for j in range(len(b)):
+# 			if a[i] == b[j]:
+# 				b.pop(j)
+# 				count+=1
+# 				break
+                
+# 	return count
+
+"""alternative"""
+
+# def commonCharacterCount(s1, s2):
+    
+# 	com = [min(s1.count(i),s2.count(i)) for i in set(s1)]
+
+# 	return sum(com)
+
+
+# s1= "aabcc"
+# s2= "adcaa"
+
+# print(commonCharacterCount(s1,s2))
+
+# def isLucky(n):
+
+# 	t = [int(i) for i in str(n)]
+# 	s = len(t)//2
+
+# 	if sum(t[:s]) == sum(t[s:]):
+# 		return True
+# 	else:
+# 		return False
+
+
+# isLucky(1544)
+
+
+# for i in range(3):
+# 	for j in range(10):
+# 		print(i)
+# 		break
+
+# x = 5
+# n = 5
+
+# a = 0
+# for i in range(x):
+#     a += n**i
+    
+# print(a)
+
+
+# """
+# Lychrel number
+# """
+# n="10154"
+# d=[n]
+# while n != n[::-1]:
+# 	n=str(int(n)+int(n[::-1]))
+# 	d.append(n)
+# print(*d)
+
+# def multipli(x):
+
+# 	for i in range(1,10):
+# 		print(i, end=": ") 
+
+# 		for j in range(x):
+# 			num = str(j*i)
+# 			print(" " * (2-len(num)) + num, end=" ") # prints the number of space required before num. 2-len(num) : 0 if len(num) = 2 or 1 if len(num) = 1
+# 		print() # prints a newline \n
+
+# multipli(10)
+
+# matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9],]
+
+
+# for seq in range(len(matrix)):
+# 	for elm in range(len(matrix[seq])):
+# 		print(matrix[seq][elm], end=" ")
+# 	print()
+
+# print()
+
+
+
+# t = ["ab", "cd", "ef",]
+
+# for i in range(len(t)):
+# 	for j in range(len(t[i])):
+# 		print(t[i][j], end=" ")
+# 	print()
+
+
+# print()
+
+# for i in range(3):
+# 	for j in range(2):
+# 		print("i:",i,"j:",j)
+
+
+"""
+Guess the number game
+"""
+import pickle
+import os
+
+def get_score():
+	if os.path.exists("data_file"):
+		with open("data_file" ,"rb") as data_file:
+			save_scores = pickle.Unpickler(data_file)
+			scores = save_scores.load()
+	else:
+		scores = {}
+
+	return scores
+
+
+def save_score(scores):
+
+	with open("data_file", 'wb') as data_file:
+		saved_scores = pickle.Pickler(data_file)
+		saved_scores.dump(scores)
+
+def get_name():
+	try:
+		print("Pls enter your name")
+		name = input()
+	except ValueError:
+		print("This is not a valid name")
+	return name
+
+def guess(name):
+	
+	rand_num = randint(0,21)
+	
+	guess = 6
+
+	score = get_score()
+
+	if name in score.keys():
+		print("Hello", name)
+	elif name not in score.keys():
+		score[name] = 0
+
+	while guess > 0:
+		print("You have", guess, "guesses")
+		print("DEBUG:",rand_num)
+
+		try:
+			print("pls chose a number")
+			i = int(input())
+			if i > rand_num:
+				print("Lower")
+				guess-=1
+			elif i < rand_num:
+				print("Higher")
+				guess-=1
+			else:
+				print("GG", name)
+				break
+		except ValueError:
+			print("This is not a number")
+
+	score[name] += guess
+
+	save_score(score)
+
+
+guess(get_name())
+
+
+
 

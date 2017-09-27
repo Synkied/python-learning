@@ -1,3 +1,4 @@
+import pickle
 # # """
 # # Building a Fighter class to learn classes
 # # """
@@ -135,3 +136,89 @@
 # price=int(input())
 # new_novel=MyBook(title,author,price)
 # new_novel.display()
+
+
+class ZDict():
+
+	def __init__(self):
+
+		self._dictionary = {}
+
+	def __getitem__(self, index):
+
+		if index in self._dictionary:
+			return self._dictionary[index]
+		else:
+			return "INDEX ERROR: Index out of range"
+
+	def __setitem__(self, index, value):
+		self._dictionary[index] = value
+
+	def __str__(self):
+		return "{}".format(self._dictionary)
+
+	def __contains__(self, obj):
+		if obj in self._dictionary:
+			return True
+		else:
+			False
+
+	def __len__(self):
+		return len(self._dictionary)
+
+
+z = ZDict()
+z[0] = 10
+z[1] = 15
+z[2] = 20
+z[3] = 25
+
+print(0 in z)
+
+print(z)
+
+
+class Duration:
+
+	def __init__(self, mins = 0, sec = 0):
+		self.mins = mins
+		self.sec = sec
+
+	def __str__(self):
+		return "{0:02}:{1:02}".format(self.mins, self.sec)
+
+	def __add__(self, obj_to_add):
+		new_dur = Duration()
+
+		new_dur.mins = self.mins
+		new_dur.sec = self.sec
+
+		new_dur.sec += obj_to_add
+
+		if new_dur.sec >= 60:
+			new_dur.mins += new_dur.sec // 60
+			new_dur.sec %= 60
+		return new_dur
+
+	def __radd__(self, obj_to_add):
+		return self + obj_to_add
+
+	def __eq__(self, other_dur):
+
+		return self.sec == other_dur.sec and self.mins == other_dur.mins
+
+	def __gt__(self, other_dur):
+		nb_sec1 = self.sec + self.mins * 60
+		nb_sec2 = other_dur.sec + other_dur.mins * 60
+
+		return nb_sec1 > nb_sec2
+
+
+d = Duration(15,15)
+
+print(d)
+d += 80
+
+print(d)
+
+

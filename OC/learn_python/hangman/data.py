@@ -23,4 +23,4 @@ word_list = [
 
 num_guesses = 8
 
-data_file_name = "data_file"o
+data_file_name = "data_file"

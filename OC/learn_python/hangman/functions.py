@@ -23,7 +23,7 @@ def get_score():
 
 	"""
 	This function seeks for an existing data_file with scores in it.
-	If it does exists, loads the scores.
+	If it does exist, loads the scores.
 	Else, creates an empty dict.
 	"""
 

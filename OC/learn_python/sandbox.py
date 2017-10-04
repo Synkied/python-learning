@@ -452,7 +452,7 @@ Print a hollow square of n length
 # 		y*=i # calculate factorial of x. eg (x = 3 -> i in range(2,4) -> y = 1*2 -> y = 2. y = 2*3 -> y = 6. factorial of 3 is 6.)
 # 	return y
 
-# # print(factorial(0))
+# print(factorial(6))
 
 # def count_repetitions(a_list):
 # 	repeted = []
@@ -512,11 +512,11 @@ Print a hollow square of n length
 # 	print("Number of permutations:",len(p))
 # 	return sorted(p)
 
-# print(permutation(3,3))
+# print(permutation(10,4))
 # print(permutation(len(l),count_repetitions(l))) # permutations of UNIQUE items in a list, via count_repetitions
-# # print(combination(n,k))
+# print(combination(n,k))
 
-# # print(permutlist(l))
+# print(permutlist(l))
 
 
 
@@ -690,73 +690,220 @@ Print a hollow square of n length
 """
 Guess the number game
 """
-import pickle
-import os
+# import pickle
+# import os
 
-def get_score():
-	if os.path.exists("data_file"):
-		with open("data_file" ,"rb") as data_file:
-			save_scores = pickle.Unpickler(data_file)
-			scores = save_scores.load()
-	else:
-		scores = {}
+# def get_score():
+# 	if os.path.exists("data_file"):
+# 		with open("data_file" ,"rb") as data_file:
+# 			save_scores = pickle.Unpickler(data_file)
+# 			scores = save_scores.load()
+# 	else:
+# 		scores = {}
 
-	return scores
+# 	return scores
 
 
-def save_score(scores):
+# def save_score(scores):
 
-	with open("data_file", 'wb') as data_file:
-		saved_scores = pickle.Pickler(data_file)
-		saved_scores.dump(scores)
+# 	with open("data_file", 'wb') as data_file:
+# 		saved_scores = pickle.Pickler(data_file)
+# 		saved_scores.dump(scores)
 
-def get_name():
-	try:
-		print("Pls enter your name")
-		name = input()
-	except ValueError:
-		print("This is not a valid name")
-	return name
+# def get_name():
+# 	try:
+# 		print("Pls enter your name")
+# 		name = input()
+# 	except ValueError:
+# 		print("This is not a valid name")
+# 	return name
 
-def guess(name):
+# def guess(name):
 	
-	rand_num = randint(0,21)
+# 	rand_num = randint(0,21)
 	
-	guess = 6
+# 	guess = 6
 
-	score = get_score()
+# 	score = get_score()
 
-	if name in score.keys():
-		print("Hello", name)
-	elif name not in score.keys():
-		score[name] = 0
+# 	if name in score.keys():
+# 		print("Hello", name)
+# 	elif name not in score.keys():
+# 		score[name] = 0
 
-	while guess > 0:
-		print("You have", guess, "guesses")
-		print("DEBUG:",rand_num)
+# 	while guess > 0:
+# 		print("You have", guess, "guesses")
+# 		print("DEBUG:",rand_num)
 
-		try:
-			print("pls chose a number")
-			i = int(input())
-			if i > rand_num:
-				print("Lower")
-				guess-=1
-			elif i < rand_num:
-				print("Higher")
-				guess-=1
-			else:
-				print("GG", name)
-				break
-		except ValueError:
-			print("This is not a number")
+# 		try:
+# 			print("pls chose a number")
+# 			i = int(input())
+# 			if i > rand_num:
+# 				print("Lower")
+# 				guess-=1
+# 			elif i < rand_num:
+# 				print("Higher")
+# 				guess-=1
+# 			else:
+# 				print("GG", name)
+# 				break
+# 		except ValueError:
+# 			print("This is not a number")
 
-	score[name] += guess
+# 	score[name] += guess
 
-	save_score(score)
-
-
-guess(get_name())
+# 	save_score(score)
 
 
+# guess(get_name())
 
 
+# a= [-1, 150, 190, 170, -1, -1, 160, 180]
+
+# def sortByHeight(a):
+    
+#     b = sorted([i for i in a if i!=-1])
+    
+#     indexVal = 0
+#     for i in range(len(a)):
+#         if a[i] != -1:
+#             a[i] = b[indexVal]
+#             indexVal+=1
+    
+#     return a
+
+
+# def reverseParentheses(s):
+# 	for i in range(len(s)):
+# 		if s[i] == "(":
+# 			start = i
+# 			print(i)
+# 			print(s[:start])
+# 		if s[i] == ")":
+# 			end = i
+
+
+
+# 			return reverseParentheses(s[:start] + s[start+1:end][::-1] + s[end+1:])
+
+# 	return s
+
+# s = "The ((quick (brown) (fox) jumps over the lazy) dog)"
+
+# print(reverseParentheses(s))
+
+"""
+alternative
+"""
+# def reverseParentheses(s):
+#     while ')' in s:
+#         j = s.index(')')
+#         i = s.rfind('(',0,j)
+#         s = s[:i]+s[j-1:i:-1]+s[j+1:]
+#     return s
+
+
+# from operator import attrgetter, itemgetter
+
+# my_name = "je suis Quentin Lathière"
+
+# print(sorted(my_name.split(), key=str.lower))
+
+# students = [("Quentin",5, 15), ("Nicolas", 15, 16), ("Cacahuete",12, 12)]
+
+# print(sorted(students, key=lambda col: col[2]))
+
+# print(sorted(students,key=itemgetter(2)))
+
+
+# class Student:
+
+# 	def __init__(self, name, age, grade):
+# 		self.name = name
+# 		self.age = age
+# 		self.grade = grade
+
+# 	def __repr__(self):
+# 		return repr((self.name, self.age, self.grade))
+
+
+# students_2 = [Student("Quentin", 18, 12), Student("Nico", 18, 18), Student("Jo", 5, 16)]
+
+# print(sorted(students_2, key=lambda student: student.age))
+
+# print(sorted(students_2, key=attrgetter("age","grade")))
+
+
+
+# """
+# stability
+# """
+
+# class Inventaire:
+
+# 	def __init__(self, product, price, qtty):
+# 		self.product = product
+# 		self.price = price
+# 		self.qtty = qtty
+
+
+# 	def __repr__(self):
+
+# 		return repr((self.product, self.price, self.qtty))
+
+
+# inv = [Inventaire("Apple", 1, 15), Inventaire("Banana", 1.5, 20), Inventaire("Pear",1.6, 10), Inventaire("Apricot", 1.5, 24)]
+
+# inv.sort(key=attrgetter("qtty"), reverse=True)
+
+# print(sorted(inv, key=attrgetter("price")))
+
+
+
+
+# t = [[1, 1, 1, 0, 0, 0], [0, 1, 0, 0, 0, 0], [1, 1, 1, 0, 0, 0], [0, 0, 2, 4, 4, 0], [0, 0, 0, 2, 0, 0], [0, 0, 1, 2, 4, 0]]
+
+
+# for i in range(4):
+
+# 	for j in range(4):
+# 		print(t[i][j:j+3])
+		
+# 		s = sum(t[i][j:j+3]) + t[i+1][j+1] + sum(t[i+2][j:j+3])
+
+
+
+# def fibo_recur(n):
+# 	if n <= 2:
+# 		return 1
+
+# 	else:
+# 		return fibo_recur(n-1)+fibo_recur(n-2)
+
+
+# print(fibo_recur(6))
+
+
+# def fibo_iter(n):
+# 	a,b = 1
+
+# 	for _ in range(2,n+1):
+# 		a,b = a, a+b
+
+# 	return b
+
+# print(fibo_iter)
+
+
+
+l = []
+
+nom = input()
+prenom = input()
+
+
+n1,n2,n3 = [int(x) for x in input().split()]
+
+moy = (n1+n2+n3)//3
+
+print("Bonjour {} {}, la moyenne de vos 3 notes est: {}".format(prenom, nom, moy))

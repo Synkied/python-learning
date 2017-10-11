@@ -437,11 +437,3 @@ We will consider a, e, i, o, and u as vowels for this Kata.
 # 	return letters_count
 
 # print(count('abaaaa'))
-
-
-
-# Regexp Basics - is it IPv4 address?
-
-
-# def ipv4_address(address):
-#     #your code heren

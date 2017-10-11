@@ -443,83 +443,6 @@ Print a hollow square of n length
 # print(matrix)
 
 
-# l = [1,2,2,3]
-
-# def factorial(n):
-# 	"""Calculates the number of permutations of n items (n: integer >= 0)"""
-# 	y = 1 # if x < 2, return 1
-# 	for i in range(2,n+1): # if x >= 2...
-# 		y*=i # calculate factorial of x. eg (x = 3 -> i in range(2,4) -> y = 1*2 -> y = 2. y = 2*3 -> y = 6. factorial of 3 is 6.)
-# 	return y
-
-# print(factorial(6))
-
-# def count_repetitions(a_list):
-# 	repeted = []
-# 	uniq = []
-# 	for item in a_list:
-# 		if item not in uniq: # if item is not in the uniq list, then we count the number of times it is in the origin list a_list. This assures we don't count n times the item is present //
-# 		# eg. [1,1,1] would return 3 3 3 if we didn't count only items appended to uniq
-# 			uniq.append(item) # append the item to the uniq list
-# 			counting = a_list.count(item) # and count the number of times the item is present in the origin list l
-# 			if counting > 1: # if item is repeted more than once
-# 				repeted.append(counting) # append counting to the repeted list, to get the number of times each item is repeted
-# 	return repeted
-
-
-# def permutation(x,y):
-# 	if type(y) == list: # y can be a list of number of times of repeted items.
-# 	# if y is such a list, we can determine how many unique permutations there are, ignoring y repeted nums
-# 	# the calculation goes : factorial(x)//fact(y[0])*fact(y[1])....*fact(y[n]))
-
-# 		m = factorial(x)
-# 		for j in y:
-# 			n = 1
-# 			for i in range(2,j+1):
-# 				m//=n*i #  (eg. factorial(8)//(factorial(2)*factorial(3)) = 3360)
-# 		return m
-
-# 	if x == 1:
-# 		return 1
-# 	else:
-# 		z = factorial(x)//factorial(x-y)
-# 		return z
-
-# def combination(x,y):
-# 	if x == 1:
-# 		return 1
-# 	else:
-# 		z = factorial(x)//(factorial(x-y)*factorial(y))
-# 		return z
-
-
-# def permutlist(seq, er=False):
-# 	"""
-# 	Returns lists of permutations in seq
-# 	if er = True, eliminates repeted elements
-# 	"""
-# 	p = [seq] # p = matrix of seq
-# 	n = len(seq)
-
-# 	for k in range(0,n-1):
-# 		for i in range(0,len(p)):
-# 			z = p[i][:] # p[i][:] is equivalent to list(p[i]). Creates a copy of p[i] in z
-# 			for c in range(0,n-k-1):
-# 				z.append(z.pop(k))
-
-# 				if er==False or z not in p:
-# 					p.append(z[:]) # copies the z list inside p, to get all permutations (with repeted elements in seq)
-# 	print("Number of permutations:",len(p))
-# 	return sorted(p)
-
-# print(permutation(10,4))
-# print(permutation(len(l),count_repetitions(l))) # permutations of UNIQUE items in a list, via count_repetitions
-# print(combination(n,k))
-
-# print(permutlist(l))
-
-
-
 # """Understanding list copy"""
 # m = [[1,2,3],[3,2,1]]
 
@@ -896,14 +819,364 @@ alternative
 
 
 
-l = []
+# l = []
 
-nom = input()
-prenom = input()
+# nom = input()
+# prenom = input()
 
 
-n1,n2,n3 = [int(x) for x in input().split()]
+# n1,n2,n3 = [int(x) for x in input().split()]
 
-moy = (n1+n2+n3)//3
+# moy = (n1+n2+n3)//3
 
-print("Bonjour {} {}, la moyenne de vos 3 notes est: {}".format(prenom, nom, moy))
+# print("Bonjour {} {}, la moyenne de vos 3 notes est: {}".format(prenom, nom, moy))
+
+
+
+
+"""
+Several people are standing in a row and need to be divided into two teams. 
+The first person goes into team 1, the second goes into team 2, the third goes into team 1 again, 
+the fourth into team 2, and so on.
+"""
+
+# a = [50, 60, 60, 45, 70]
+
+# def alternatingSums(a):
+# 	t = []
+# 	b = 0
+# 	c = 0
+# 	for i in range(len(a)):
+# 		if i%2==0:
+# 			b += a[i]
+# 		else:
+# 			c += a[i]
+			
+# 	t.append(b)
+# 	t.append(c)
+
+# 	return t
+
+# print(alternatingSums(a))
+
+# """
+# alternative (beautiful)
+# """
+# return [sum(a[::2]),sum(a[1::2])]
+
+
+# picture = ["abc", 
+#  "ded"]
+
+# def addBorder(picture):
+
+# 	star_row = "*"*(len(picture[0])+2)
+
+# 	return [star_row, (*["*"+row+"*" for row in picture]), star_row]
+
+
+# print(addBorder(picture))
+
+
+# a = [1, 1, 4]
+# b = [1, 2, 3]
+
+# def areSimilar(a, b):
+
+# 	mismatches = []
+
+# 	for i in range(len(a)):
+# 		if a[i] != b[i]:
+# 			if len(mismatches) > 1:
+# 				return False
+# 			if len(mismatches) == 0:
+# 				mismatches.append(i)
+# 			else:
+# 				j = mismatches[0]
+# 				if a[i] != b[j] or a[j] != b[i]:
+# 					return False
+# 				mismatches.append(i)
+
+# 	return True
+
+
+# print(areSimilar(a,b))
+
+
+# """alternative"""
+# from collections import Counter as C
+
+# def areSimilar(A, B):
+#     return C(A) == C(B) and sum(a != b for a, b in zip(A, B)) < 3
+
+# inputArray = [-1000, 0, -2, 0]
+
+# def arrayChange(inputArray):
+# 	c = 0
+# 	for i in range(len(inputArray)-1):
+# 		if inputArray[i+1] <= inputArray[i]:
+# 			inputArray[i+1]+=inputArray[i]
+# 			c += 1
+# 	print(inputArray)
+# 	print(c)
+
+# arrayChange(inputArray)
+    
+
+
+
+
+
+
+# def bubble_sort(a_list):
+
+# 	for _ in range(len(a_list) - 1):   
+
+# 		for j in range(len(a_list) - 1):
+
+# 			print(j," ",end="")
+
+# 			if a_list[j + 1] < a_list[j]:
+
+# 				a_list[j+1], a_list[j] = a_list[j], a_list[j+1]
+# 		print()
+
+# 	return a_list
+
+
+# l = [5,2,9,7,8,0,1,6,4,3]
+
+# print(bubble_sort(l))
+
+
+
+# for i in range(2):
+# 	print("row",i)
+# 	for j in ["A","B","C"]:
+# 		print(i, end="")
+# 		print(j, end=" ")
+# 	print()
+
+
+
+# for i in range(5):
+# 	for j in range(i+1):
+# 		print("*", end="")
+# 	print()
+
+
+# m = [[1,2,3,4,5,6,7,8,9], ["A","B","C","D","E","F","G","H","I"]]
+
+
+# for row in range(len(m)):
+# 	for col in m[row]:
+# 		print(col, end="")
+# 	print()
+# 	print(row, m[row][0])
+# 	
+
+
+# matrix = [[0,1,2,3],[0,1,2,3],[0,1,2,3],[0,1,2,3]]
+
+# for row in range(len(matrix)): # each list in matrix is a row
+# 	for col in matrix[row]: # each item in row is a column
+# 		matrix[row][col] = row * col # for each column in each row, we compute row * col, so it goes like row0: 0*0 0*1 0*2 0*3; row1: 1*0 1*1 1*2 1*3
+
+# 		print(matrix[row][col], " ", end="") # print each rows and cols with a space separating each item and with no newline at the end
+# 	print("row",row, end="")
+# 	print() # print a newline between each rows
+
+
+# s = ["Je suis une phrase", "Hey ho"]
+
+# for row in range(len(s)):
+# 	for col in s[row]:
+# 		print(col,end="")
+# 	print()
+
+
+"""
+Comprehension dictionary
+"""
+
+# CANDIDATES = {
+#     "hermione": "Hermione Granger",
+#     "balou": "Balou",
+#     "chuck-norris": "Chuck Norris",
+#     "elsa": "Elsa",
+#     "gandalf": "Gandalf",
+#     "beyonce": "Beyoncé"
+# }
+
+# MENTIONS = [
+#     "Excellent",
+#     "Très bien",
+#     "Bien",
+#     "Assez Bien",
+#     "Passable",
+#     "Insuffisant",
+#     "A rejeter"
+# ]
+
+# t = {candidate:[0]*len(MENTIONS) for candidate in CANDIDATES.keys()}
+
+# print(t)
+
+
+
+
+# def ask(a_list):
+
+# 	while True:
+# 		item = input("Please enter a word to search for: ").capitalize()
+# 		linear_search(item, a_list)
+
+		
+# def linear_search(item, a_list):
+
+# 	"""
+# 	Linear search in a list
+# 	"""
+# 	found = False
+
+# 	for i in range(len(a_list)):
+# 		if a_list[i] == item:
+# 			found = True
+
+# 	if found == True:
+# 		print("Found")
+# 		print("Number of searches:", i+1)	
+# 	else:
+# 		while True:
+# 			answer = input("Item not found. Do you want to add this item to the list ? (Y or N)")
+# 			answer = answer.lower()
+
+# 			if answer == "y":
+# 				a_list.append(item)
+# 				print("The list is now:", a_list)
+# 				return False
+# 			elif answer == "n":
+# 				return False
+# 			else:
+# 				print("This is not a valid answer")
+
+
+# my_list = ["Banana","Apple","Peach","Pear","Damn","Hi"]
+
+
+# if __name__ == "__main__":
+#     ask(my_list)
+
+
+"""
+Training with lists and dictionary in classes
+"""
+
+# class Products:
+
+# 	def __init__(self, name, price, quantity):
+# 		self.name = name
+# 		self.price = price
+# 		self.quantity = quantity
+
+# 	def dic_conversion(self):
+# 		return {self.name:{"price": self.price, "quantity": self.quantity}}
+
+# 	def list_tuple_conversion(self):
+# 		return [(self.name, (self.price, self.quantity))]
+
+
+# apple = Products("Apple", 1.5, 3)
+
+# orange = Products("Orange", 1.2, 10)
+
+# print(apple.dic_conversion())
+# print(apple.list_tuple_conversion())
+# print()
+# print(orange.dic_conversion())
+# print(orange.list_tuple_conversion())
+
+
+# PRODUCTS = ["Pear","Apple","Orange","Peach"]
+
+# PRICE = ["1.5","1.2","1.4","1.3"]
+
+# QUANTITY = ["3","5","6","2"]
+
+# t = {product:{"price":price,"quantity":quantity} for product in PRODUCTS for price in PRICE for quantity in QUANTITY}
+
+# u = [(product, (priceqtt["price"], priceqtt["quantity"])) for product, priceqtt in t.items()]
+
+# print(u)
+
+
+
+# string = "banana"
+# s = []
+# t=[]
+
+# for i in range(len(string)):
+# 	if string[i] == "a":
+# 		s.append(i)
+
+# print(s)
+# print(len(s))
+
+
+# data = 'From stephen.marquard@uct.ac.za Sat Jan  5 09:14:16 2008'
+
+# atpos = data.find("@")
+# sppos = data.find(" ", atpos)
+
+# host = data[atpos+1:sppos]
+
+# print(host)
+
+
+# """
+# array differences
+# """
+
+# inputArray = [-1000, 0, -2, 0]
+
+
+# def arrayChange(inputArray):
+# 	c = 0
+# 	for i in range(len(inputArray)-1):
+# 		if inputArray[i] >= inputArray[i+1]:
+# 			diff = inputArray[i] - inputArray[i+1] + 1
+# 			inputArray[i+1] = inputArray[i] + 1
+# 			c+=diff
+# 	return c
+
+# print(arrayChange(inputArray))
+
+
+inputString = "aaabbcceee"
+
+# def palindromeRearranging(inputString):
+
+# 	"""
+# 	Finds if a string can be a palyndrome
+# 	"""
+# 	s = set()
+# 	for c in inputString:
+# 		if inputString.count(c) % 2 > 0:
+# 			s.add(c)
+# 	if len(s) > 1:
+# 		return False
+# 	else:
+# 		return True
+
+"""alternative one line"""
+
+# def palindromeRearranging(inputString):
+
+# 	return len(set(c for c in inputString if inputString.count(c) % 2 > 0)) <= 1
+
+
+"""alternative one line 2"""			
+
+# return sum([inputString.count(i)%2 for i in set(inputString)]) <= 1
+
+# print(palindromeRearranging(inputString))

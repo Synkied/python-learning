@@ -32,8 +32,6 @@ while continue_game != False:
 		print("Word to find:{}. Guesses left: {}".format(word_to_guess, num_chances))
 		char_guess = get_letter_input()
 
-		
-
 		if char_guess in tried_letters:
 			print("<"*30)
 			print("You already tried that one.")

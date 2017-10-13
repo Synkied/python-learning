@@ -1180,3 +1180,114 @@ inputString = "aaabbcceee"
 # return sum([inputString.count(i)%2 for i in set(inputString)]) <= 1
 
 # print(palindromeRearranging(inputString))
+
+import time
+
+from random import random
+
+from math import ceil
+
+lst = [3,7,1,2,3]
+
+my_list = [7,2,3,10,3,30]
+my_list2 = [0,8,9]
+
+# def average(lst):
+# 	return (sum(lst)/len(lst))
+
+# def average(lst):
+# 	j = 0
+# 	nb = 0
+# 	begin = time.time()
+# 	for i in lst:
+# 		j += i
+# 		nb += 1
+# 	j /= nb
+# 	end = time.time() - begin
+# 	print(end)
+# 	return j
+
+# print(average(lst))
+
+
+
+# def median(lst):
+# 	l = sorted(lst)
+# 	if len(lst)%2==0:
+# 		index = len(lst)//2
+# 		return (l[index] + l[index-1])//2
+# 	else:
+# 		index = (len(lst)-1)//2
+# 		return l[index]
+
+
+# print(median(my_list))
+
+# print(median(my_list2))
+
+
+
+# def occurences(lst):
+# 	dic = {}
+# 	for c in lst:
+# 		if c in dic:
+# 			dic[c]+=1
+# 		else:
+# 			dic[c]=1
+
+# 	return dic
+
+
+# occurences(lst)
+
+unique_lst = [2,3,1,1,3,1,4,1,3]
+
+# def unique(lst):
+# 	l = []
+# 	for n in lst:
+# 		if n not in l:
+# 			l.append(n)
+
+# 	return(l)
+
+
+# print(unique(unique_lst))
+
+
+
+def squares(lst):
+	return [s**2 for s in lst]
+
+print(squares(lst))
+
+
+def stddev(lst):
+	average = sum(lst)/len(lst)
+	var = sum([(e - average)**2 for e in lst]) / (len(lst))
+	ecart = var**(1/2)
+	return ecart
+
+print("Stddev : ")
+print(stddev([5,4,7,4,4,2,5,9]))
+print(stddev([20,20,20]))
+
+
+def uniform():
+	nb_0 = 0
+	nb_1 = 0
+
+	for e in range(10**6):
+		n = random.randint(0,1)
+		if n == 0: nb_0 += 1
+		else: nb_1 += 1
+
+	total = nb_0 + nb_1
+	return "0: {}% | 1: {}%".format((nb_0*100/total), (nb_1*100/total))
+
+print("Uniform 1 : ")
+print(uniform())
+
+
+
+
+

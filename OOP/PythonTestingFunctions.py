@@ -87,7 +87,7 @@ newList = [x for x in nums if x%2==0] #return a new list with even numbers
 listBool = [x%2==0 for x in nums] #returns a new list with booleans for each numbers. True if even
 lambdaMap = list(map(lambda x:x*4, nums)) #returns a new list with each item *4. Using lambda to map
 lambdaFilter = list(filter(lambda x:x%2==0, nums)) #returns a new list with only even numbers. Using lambda to filter
-listCompMap = [x*4 for x in nums] # maps items using list comprehensions
+listCompMap = [mult(x) for x in nums] # maps items using list comprehensions
 simpleMap = list(map(mult,nums)) # maps items using map
 
 print(newList)
@@ -154,7 +154,7 @@ print(second - first)
 print(first ^ second)
 
 # Understanding magic classes
-print ("\n","-"*8, "Understanding magic classes", "-"*8)
+print ("\n","-"*8, "Understanding magic methods", "-"*8)
 
 x = [1,2,3,4]
 

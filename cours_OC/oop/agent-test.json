@@ -1,0 +1,22 @@
+[
+  {
+    "age": 84,
+    "agreeableness": -0.8437190198916452,
+    "conscientiousness": 0.6271643010309115,
+    "country_name": "China",
+    "country_tld": "cn",
+    "date_of_birth": "1933-12-27",
+    "extraversion": 0.3229563709288293,
+    "id": 227417393,
+    "id_str": "bNn-9Gc",
+    "income": 9881,
+    "internet": false,
+    "language": "Standard Chinese or Mandarin",
+    "latitude": 33.15219798270325,
+    "longitude": 100.85840672174572,
+    "neuroticism": 0.15407262417068612,
+    "openness": 0.041970542572878806,
+    "religion": "unaffiliated",
+    "sex": "Male"
+  }
+]

@@ -3,14 +3,16 @@ import math
 
 class Agent:
 
-	def __init__(self, position, **agent_attributes): # initialize the Agent class with **kwargs (a dictionary with unknown number of pairs)
+	def __init__(self, position, **agent_attributes): # initialize the Agent class with **kwargs (a dictionary with unknown number of k:v pairs); packing keyword args in a dict {}
 		self.position = position
 		for attr_name, attr_value in agent_attributes.items(): # (items() returns a list of tuple pairs, on which it's possible to iterate)
 			setattr(self, attr_name, attr_value) # sets all the key:value pairs to instances of the class Agent
+			
 
 	# def say_hello(self, first_name):
 	# 	self.first_name = first_name
 	# 	return("Bien le bonjour {} !".format(first_name))
+
 
 class Position:
 	def __init__(self, longitude_degrees, latitude_degrees):
@@ -27,6 +29,11 @@ class Position:
 		# Latitude in radians
 		return self.latitude_degrees * math.pi / 180
 
+	def __str__(self):
+
+		return "{}, {}".format(self.longitude_degrees, self.latitude_degrees)
+
+
 class Zone:
 
 	ZONES = []
@@ -40,14 +47,14 @@ class Zone:
 	def __init__(self, corner1, corner2):
 		self.corner1 = corner1
 		self.corner2 = corner2
-		self.inhabitants = []
+		self.inhabitants_list = []
 
 	@property
 	def population(self):
-		return len(self.inhabitants)
+		return len(self.inhabitants_list)
 
 	def add_inhabitant(self, inhabitant):
-		self.inhabitants.append(inhabitant)
+		self.inhabitants_list.append(inhabitant)
 
 	def contains(self, position):
 		return position.longitude >= min(self.corner1.longitude, self.corner2.longitude) and \
@@ -71,7 +78,6 @@ class Zone:
 
 	@classmethod
 	def initialize_zones(cls):
-		# Note that this method is "private": we prefix the method name with "_".
 		cls.ZONES = []
 		for latitude in range(cls.MIN_LATITUDE_DEGREES, cls.MAX_LATITUDE_DEGREES, cls.HEIGHT_DEGREES):
 			for longitude in range(cls.MIN_LONGITUDE_DEGREES, cls.MAX_LONGITUDE_DEGREES, cls.WIDTH_DEGREES):
@@ -81,20 +87,23 @@ class Zone:
 				cls.ZONES.append(zone)
 
 
+
 def main():
-	Zone.initialize_zones()
+	Zone.initialize_zones() # class method call on Zone
 	for agent_attributes in json.load(open("agents-100k.json")): # loads the agents in the json file into a python dictionary
-		latitude = agent_attributes.pop("latitude") # returns the value of the latitudes keys in the agent_attributes dictionary
+		"""
+		We pop latitude and longitude first, to avoid having duplicates when we unpack **agent_attributes in our instatiation
+		"""
+		latitude = agent_attributes.pop("latitude") # returns and pops the value of the latitudes keys in the agent_attributes dictionary 
 		longitude = agent_attributes.pop("longitude")
 
-		position = Position(longitude, latitude) # instatiate an object "position" with latitude and longitude as attributes
+		position = Position(longitude, latitude) # instantiate an object "position" with latitude and longitude as attributes
 
-		agent = Agent(position, **agent_attributes) # instantiate an object "agent" with **kwargs attributes (named attributes, dictionary)
-		agent = Agent(position, **agent_attributes)
+		agent = Agent(position, **agent_attributes) # instantiate an object "agent" with **kwargs attributes (named attributes, dictionary); unpacking (k=v, k=v, k=v, ...)
 		zone = Zone.find_zone_that_contains(position)
 		zone.add_inhabitant(agent)
-		print(zone.population)
+		print("Zone pop.:",zone.population)
 
 main()
 if __name__ == main(): # if the python script is executed from this file...
-	main() # execute the "main" function
+	main() # ... execute the "main" function

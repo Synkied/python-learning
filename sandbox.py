@@ -1305,11 +1305,48 @@ inputString = "aaabbcceee"
 # agent = Agent(**agent_attributes
 
 
-inputArray = [10, 11, 13]
+# inputArray = [10, 11, 13]
 
-def arrayMaximalAdjacentDifference(inputArray):
-    return max([(abs(inputArray[i] - inputArray[i+1])) for i in range(len(inputArray)-1)])
+# def arrayMaximalAdjacentDifference(inputArray):
+#     return max([(abs(inputArray[i] - inputArray[i+1])) for i in range(len(inputArray)-1)])
 
 
 
-print(arrayMaximalAdjacentDifference(inputArray))
+# print(arrayMaximalAdjacentDifference(inputArray))
+
+
+# def isIPv4Address(inputString):
+#     c = inputString.split(".")
+#     if len(c) < 4 or len(c) > 4:
+#         return False
+#     for idx, l in enumerate(c):
+#         if not l.isdigit():
+#             return False
+#         if int(c[idx]) < 0 or int(c[idx]) > 255:
+#             return False
+#     else:
+#         return True
+
+
+# print(isIPv4Address(s))
+
+
+
+# inputArray = [1, 4, 10, 6, 2]
+
+
+# def avoidObstacles(inputArray):
+#     s = set()
+#     t = set(range(1, max(inputArray) + 2))
+#     inputArray = sorted(inputArray)
+#     for i in t:
+#         for j in inputArray:
+#             if j % i == 0:
+#                 s.add(i)
+#     return min(t - s)
+
+# avoidObstacles(inputArray)
+
+import math
+
+print(math.floor(7.5))
